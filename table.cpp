@@ -36,13 +36,17 @@ public:
         }
     };
     void make_move(int row, int col, int value) {
-        if (check_cell(row, col))
+        while (!check_cell(row, col))
         {
-            /* code */
-            set_cell_value(row, col, value);
-            number_cell_blank--;
-            number_cell_non_blank++;
+            std::cout << "Enter row and column: ";
+            std::cin >> row >> col;
+
         }
+        set_cell_value(row, col, value);
+        number_cell_blank--;
+        number_cell_non_blank++;
+        
+        
         
         
     }
